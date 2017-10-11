@@ -43,5 +43,7 @@ run: $(BUILD_DIR)/$(TARGET_EXEC)
 	build/a.out $@ $(CITYNAME) $(TAXI_DATA_NAME) $(METHOD)
 
 list:
-	@echo "- extract_graph <cityname(tokyo)>"
-	@echo "- generate_trip <cityname(tokyo)> <hours[0,24]> <num_samples(5000)>"
+	@echo "- \"make\": Build repository."
+	@echo "- \"make extract_graph CITYNAME=<cityname(tokyo)>\": Convert .osm data into simpler format."
+	@echo "- \"make generate_trip CITYNAME=<cityname(tokyo)> HOURS=<hours[0,24]> NUM_SAMPLES=<num_samples(5000)>\": Generate random trips."
+	@echo "- \"make run\": Implement your own research."

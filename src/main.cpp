@@ -41,6 +41,10 @@ void generate_trip(int argc, char *argv[], const std::string &cityname) {
   }
 }
 
+void run() {
+  
+}
+
 int main(int argc, char *argv[]) {
   if (argc < 2) {
     base::Log::error("Please specify command to run");
@@ -58,6 +62,8 @@ int main(int argc, char *argv[]) {
     extract_graph(argc, argv, cityname);
    else if (command ==  "generate_trip")
     generate_trip(argc, argv, cityname);
+  else if (command ==  "run")
+    run();
   else {
     base::Log::error("Invalid command name: " + command);
     return 1;
