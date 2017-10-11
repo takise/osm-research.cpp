@@ -34,6 +34,8 @@
 *.app
 
 .DS_Store
-/build/*
-/data/*
+/build/
+/data/graph/osm/*
+/data/graph/processed/*
+/data/taxi/*
 !sample.osm
