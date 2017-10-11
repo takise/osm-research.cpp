@@ -40,7 +40,7 @@ generate_trip: $(BUILD_DIR)/$(TARGET_EXEC)
 	build/a.out $@ $(CITYNAME) $(HOURS) $(NUM_SAMPLES)
 
 run: $(BUILD_DIR)/$(TARGET_EXEC)
-	build/a.out $@ $(CITYNAME) $(TAXI_DATA_NAME) $(METHOD)
+	build/a.out $@ $(CITYNAME)
 
 list:
 	@echo "- \"make\": Build repository."

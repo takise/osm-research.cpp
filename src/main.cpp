@@ -8,7 +8,13 @@
 #include "osm_parser.h"
 #include "visualizer.h"
 
-void extract_graph(int argc, char *argv[], const std::string &cityname) {
+void extract_graph(int argc, char *argv[]) {
+  if (argc < 3) {
+    base::Log::error("Please specify city name");
+    return;
+  }
+  std::string cityname(argv[2]);
+  
   graph::OsmParser::Parse("data/graph/osm/" + cityname + ".osm", 
                           "data/graph/processed");
 }
@@ -16,7 +22,13 @@ void extract_graph(int argc, char *argv[], const std::string &cityname) {
 // format:
 // 1                   : <hours> <num_trips>
 // 2 ~ <num_trips> + 1 : <start_node> <end_node> <start_time>
-void generate_trip(int argc, char *argv[], const std::string &cityname) {
+void generate_trip(int argc, char *argv[]) {
+  if (argc < 3) {
+    base::Log::error("Please specify city name");
+    return;
+  }
+  std::string cityname(argv[2]);
+  
   if (argc < 5) {
     base::Log::error("Please specify the number of hours and samples");
     return;
@@ -41,29 +53,29 @@ void generate_trip(int argc, char *argv[], const std::string &cityname) {
   }
 }
 
-void run() {
-  
+void run(int argc, char *argv[]) {
+  std::cout << "Hello World!" << std::endl;
+
+  /*
+    Implement your own research here!
+   */
 }
 
 int main(int argc, char *argv[]) {
+  base::Log::info("------------- Main Program ----------------");
+  
   if (argc < 2) {
     base::Log::error("Please specify command to run");
     return 1;
   }
   std::string command(argv[1]);
 
-  if (argc < 3) {
-    base::Log::error("Please specify city name");
-    return 1;
-  }
-  std::string cityname(argv[2]);
-
   if (command == "extract_graph")
-    extract_graph(argc, argv, cityname);
+    extract_graph(argc, argv);
    else if (command ==  "generate_trip")
-    generate_trip(argc, argv, cityname);
+    generate_trip(argc, argv);
   else if (command ==  "run")
-    run();
+    run(argc, argv);
   else {
     base::Log::error("Invalid command name: " + command);
     return 1;
