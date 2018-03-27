@@ -58,5 +58,13 @@ graph.lat[0]   // 頂点0の緯度
     <dt>graph.h, graph.cpp</dt>
     <dd>グラフを表すクラス. 頂点を表す`node.h`や, 辺を表す`edge.h`に依存.</dd>
     <dt>visualizer.h, visualizer.cpp</dt>
-    <dd>グラフ全体や, 経路などをpngファイルに可視化する.</dd>
+    <dd>グラフ全体や, 経路などをpngファイルに可視化する. 色も自由に設定できます.</dd>
+    <dt>log.h, log.cpp</dt>
+    <dd>デバッグ情報やプログレスバーなどを出力する.</dd>
+    <dt>osm_parser.h, osm_parser.cpp</dt>
+    <dd>open street mapのRAWデータを変換する処理.</dd>
+    <dt>shortest_path.h, shortest_path.cpp</dt>
+    <dd>最短経路の計算用. 現状はDijkstraのみ.</dd>
+    <dt>commandline.h, commandline.cpp</dt>
+    <dd>bashコマンドをC++プログラムから呼び出す用.</dd>
 </dl>
