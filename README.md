@@ -94,9 +94,11 @@ graph.lat[0]   // 頂点0の緯度
 	グラフ全体や, 経路などをpngファイルに可視化します. 色も自由に設定できます.
     </dd>
 </dl>
+
 ```cpp
 graph::Visualizer::ShowNodesAndEdges("build/sample.png", {{3, 0}, {4, 1}}, {{5, 2}, {6, 2}});
 ```
+
 <dl>
     <dd>
     </dd>
