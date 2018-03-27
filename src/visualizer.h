@@ -14,8 +14,11 @@ namespace graph {
 class Visualizer {
 public:
   int PIC_SIZE = 5000;
-  std::vector<std::string> COLORS = {
-    "#c0392b", "#2980b9", "#16a085", "#8e44ad", "#f39c12", "#2c3e50", "#f1c40f", "#3498db", "#2ecc71", "#7f8c8d"
+  enum Colors {
+    RED, BLUE, GREEN
+  };
+  std::vector<std::string> COLOR_LIST = {
+    "#c0392b", "#2980b9", "#16a085"
   };
   int pic_w, pic_h;
   Graph g;

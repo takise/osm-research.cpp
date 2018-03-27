@@ -96,7 +96,13 @@ graph.lat[0]   // 頂点0の緯度
 </dl>
 
 ```cpp
-graph::Visualizer::ShowNodesAndEdges("build/sample.png", {{3, 0}, {4, 1}}, {{5, 2}, {6, 2}});
+graph::Graph g("data/graph/processed/sample.txt");
+graph::Visualizer vis(g);
+graph::Edge e = graph::Edge{0, g.es[0][0], -1};  // 頂点0の一つ目の辺(重みはどうでもよい)
+vis.ShowNodesAndEdges("sample.png",  // 出力ファイル名(buildフォルダに生成される)
+		      {{0, graph::Visualizer::RED},  //頂点0を赤に塗る
+		       {5, graph::Visualizer::BLUE}},  //頂点5を青に塗る
+		      {{e, graph::Visualizer::GREEN}});  //辺eを緑に塗る
 ```
 
 <dl>

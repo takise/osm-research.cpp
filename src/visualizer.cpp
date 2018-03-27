@@ -41,7 +41,7 @@ void Visualizer::ShowNodesAndEdges(const std::string& filename,
   for (int i = 0; i < g.V; i++) {
     double nlat = (g.lat[i] - g.minlat) / (g.maxlat - g.minlat) * pic_h;
     double nlon = (g.lon[i] - g.minlon) / (g.maxlon - g.minlon) * pic_w;
-    if (cns.count(i)) ofs << "  " << i << " [pos=\"" << nlon << "," << nlat << "\", label=\"\", style=filled, height=0.7, width=0.7, fillcolor=\""+COLORS[cns[i]]+"\", color=\""+COLORS[cns[i]]+"\"]" << std::endl;
+    if (cns.count(i)) ofs << "  " << i << " [pos=\"" << nlon << "," << nlat << "\", label=\"\", style=filled, height=0.7, width=0.7, fillcolor=\""+COLOR_LIST[cns[i]]+"\", color=\""+COLOR_LIST[cns[i]]+"\"]" << std::endl;
     else ofs << "  " << i << " [pos=\"" << nlon << "," << nlat << "\", label=\"\"]" << std::endl;
   }
   
@@ -52,7 +52,7 @@ void Visualizer::ShowNodesAndEdges(const std::string& filename,
       Edge e = (Edge){from, to, w};
       if (from < to) {
         if (ces.count(e)) {
-          std::string c = COLORS[ces[e]];
+          std::string c = COLOR_LIST[ces[e]];
           ofs << "  " << from << " -- " << to << " [color=\""+c+"\", penwidth=10];" << std::endl;
         }
         else ofs << "  " << from << " -- " << to << ";" << std::endl;
