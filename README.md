@@ -92,9 +92,13 @@ graph.lat[0]   // 頂点0の緯度
     <dt>visualizer.h, visualizer.cpp</dt>
     <dd>
 	グラフ全体や, 経路などをpngファイルに可視化します. 色も自由に設定できます.
-	```cpp
-	graph::Visualizer::ShowNodesAndEdges("build/sample.png", {{3, 0}, {4, 1}}, {{5, 2}, {6, 2}});
-	```
+    </dd>
+</dl>
+```cpp
+graph::Visualizer::ShowNodesAndEdges("build/sample.png", {{3, 0}, {4, 1}}, {{5, 2}, {6, 2}});
+```
+<dl>
+    <dd>
     </dd>
     <dt>log.h, log.cpp</dt>
     <dd>デバッグ情報やプログレスバーなどを出力します.</dd>
